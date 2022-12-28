@@ -1,0 +1,26 @@
+package pages;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class LoginPage extends PageBase {
+
+
+
+    private static final By Email=By.xpath("//input[@placeholder='E-Mail Address']");
+    private static final By Password=By.xpath("//input[@placeholder='Password']");
+    private static final By Button=By.xpath("//input[@value='Login']");
+
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public MyAccountPage LoginInfo(String theEmail,String ThePass){
+        Type(Email,theEmail);
+        Type(Password,ThePass);
+        click(Button);
+        return new MyAccountPage(driver);
+    }
+
+}

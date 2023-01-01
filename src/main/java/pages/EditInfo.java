@@ -6,9 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class EditInfo extends PageBase {
 
 
-    public EditInfo(WebDriver driver) {
-        super(driver);
-    }
     private static final By fName=By.xpath("//input[@id='input-firstname']");
     private static final By Button=By.xpath("//input[@value='Continue']");
     private static final By Success=By.xpath("//div[@class='alert alert-success alert-dismissible']");

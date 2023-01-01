@@ -16,9 +16,6 @@ public class SearchPage extends PageBase {
     private static final By AddToCompareList=By.xpath("//button[@data-original-title='Compare this Product']");
     private static final By AlertCompare=By.xpath("//a[normalize-space()='product comparison']");
 
-    public SearchPage(WebDriver driver) {
-        super(driver);
-    }
 
     public ComparePage CompareClick(){
         clickjs(AddToCompareList);
@@ -27,7 +24,7 @@ public class SearchPage extends PageBase {
 
 
        clickjs(AlertCompare);
-        return new ComparePage(driver);
+        return new ComparePage();
 
 
     }

@@ -17,9 +17,6 @@ public class MyAccountPage extends PageBase {
     private static final By clicksearch=By.xpath("//button[@class='btn btn-default btn-lg']");
 
 
-    public MyAccountPage(WebDriver driver) {
-        super(driver);
-    }
 
     public String message(){
         return find(H2).getText();
@@ -29,21 +26,21 @@ public class MyAccountPage extends PageBase {
     }
     public EditInfo edit(){
          click(EditInfo);
-        return new EditInfo(driver);
+        return new EditInfo();
     }
     public SearchPage search(String product){
          Type(Search,product);
          click(clicksearch);
 
-        return new SearchPage(driver);
+        return new SearchPage();
     }
 
 
     public ChangeInfo change(){
-        clickjs(ChangePassword);
+        click(ChangePassword);
 
 
-        return new ChangeInfo(driver);
+        return new ChangeInfo();
     }
 
 }

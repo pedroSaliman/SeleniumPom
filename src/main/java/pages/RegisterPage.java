@@ -4,9 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends PageBase{
-    public RegisterPage(WebDriver driver) {
-        super(driver);
-    }
     private static final By fName= By.xpath("//input[@id='input-firstname']");
     private static final By lName=By.xpath("//input[@id='input-lastname']");
     private static final By Email=By.xpath("//input[@id='input-email']");
@@ -30,6 +27,6 @@ click(Check);
 click(Privacy);
 click(Button);
 
-        return new MyAccountPage(driver);
+        return new MyAccountPage();
     }
 }

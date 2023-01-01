@@ -4,9 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ChangeInfo extends PageBase{
-    public ChangeInfo(WebDriver driver) {
-        super(driver);
-    }
 
     private static final By NewPassword= By.xpath("//input[@placeholder='Password']");
     private static final By ConfirmNewPassword=By.xpath("//input[@placeholder='Password Confirm']");

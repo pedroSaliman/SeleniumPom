@@ -8,38 +8,38 @@ public class TestCases extends BaseTest{
 
     @Test
     public void registerInfo(){
-        new Home(driver).registerClick().Register(config.fname(), config.lname(), email, config.telephone(), config.password(), config.confirm());
-        Assert.assertEquals("Your Account Has Been Created!",new MyAccountPage(driver).messageCreatAccount());
+        new Home().registerClick().Register(config.fname(), config.lname(), email, config.telephone(), config.password(), config.confirm());
+        Assert.assertEquals("Your Account Has Been Created!",new MyAccountPage().messageCreatAccount());
 
     }
 
     @Test(dependsOnMethods = {"registerInfo"})
     public void LoginCase(){
-        new Home(driver).logout()
+        new Home().logout()
 
         .LoginInfo(email,config.password());
-       Assert.assertEquals("My Account",new MyAccountPage(driver).message());
+       Assert.assertEquals("My Account",new MyAccountPage().message());
     }
     @Test(dependsOnMethods = {"LoginCase"})
     public void EditAccountCase(){
-        new MyAccountPage(driver).edit().editInfo(config.fname());
-        Assert.assertEquals("Success: Your account has been successfully updated.", new EditInfo(driver).MessageOfAlertToUpdateMyAccount());
+        new MyAccountPage().edit().editInfo(config.fname());
+        Assert.assertEquals("Success: Your account has been successfully updated.", new EditInfo().MessageOfAlertToUpdateMyAccount());
 
     }
 
     @Test(dependsOnMethods = {"EditAccountCase"})
     public void ChangePass(){
-        new MyAccountPage(driver).change().ChangeInformationAboutPassword(config.changepassword(), config.changepassword());
-        Assert.assertEquals("Success: Your password has been successfully updated.",new ChangeInfo(driver).AlertText());
+        new MyAccountPage().change().ChangeInformationAboutPassword(config.changepassword(), config.changepassword());
+        Assert.assertEquals("Success: Your password has been successfully updated.",new ChangeInfo().AlertText());
     }
 
 
 
     @Test(dependsOnMethods = {"ChangePass"})
     public void SearchCaseCompare(){
-        new MyAccountPage(driver).search(config.product()).CompareClick();
-        new MyAccountPage(driver).search(config.anotherproduct()).CompareClick();
-        Assert.assertEquals(new ComparePage(driver).MessageOfCompare(),"Product Comparison");
+        new MyAccountPage().search(config.product()).CompareClick();
+        new MyAccountPage().search(config.anotherproduct()).CompareClick();
+        Assert.assertEquals(new ComparePage().MessageOfCompare(),"Product Comparison");
     }
 
 
